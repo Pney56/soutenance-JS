@@ -1,0 +1,124 @@
+body {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+p {
+    margin: 10px 0px 0px 0px;
+}
+ul {
+    margin: 8px 0px 0px 0px;
+}
+.card {
+    box-sizing: border-box;
+    margin: 20px auto;
+    width: 980px;
+    position: relative;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.instructions {
+    padding: 20px 20px 20px 30px;
+    color: #6c757d;
+    border-left: 4px solid rgb(207, 4, 4);
+}
+.subject {
+    padding: 20px 20px 20px 30px;
+    border-left: 4px solid rgb(10, 133, 12);
+    background-color: #ddd;
+}
+.input {
+    padding: 20px 20px 20px 30px;
+    border-left: 4px solid #007bff;
+    background-color: #fff;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.result {
+    padding: 20px 20px 20px 30px;
+    border-left: 4px solid rgb(3, 50, 132);
+    background-color: #fff;
+}
+
+.btn {
+    margin-top: 10px;
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+.h6 {
+    margin: 10px 0;
+}
+.font-weight-bold {
+    font-weight: 700;
+}
+.text-center{
+    text-align: center;
+}
+
+.text-success {
+    color: #28a745 !important;
+}
+.text-danger {
+    color: #dc3545 !important;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+th, td  {
+    border: solid 1px #007bff;
+    padding: 5px 8px;
+    text-align: center;
+}
+
+
+
+.formulaire input, 
+.formulaire select, 
+.formulaire button {
+    margin-top: 0;
+    line-height: 24px;
+    padding: 6px 10px;
+
+}
+.formulaire {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgba(4, 41, 186, 0.482);
+    border-radius: .25rem;
+    padding: 10px;
+}

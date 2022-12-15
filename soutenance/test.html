@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input id="hauteur" class="form-control" type="text" name="hauteur">
+    <button type="button" class="btn btn-primary" onclick="dropToCrash()">
+        Lâcher dans le vide
+    </button>
+
+
+    <script type="text/javascript">
+        
+    
+        function dropToCrash (){
+            // Demandez à l'utilisateur de saisir la hauteur de départ
+        let hauteurDepart = document.getElementById('hauteur').value
+        
+        
+        // Définissez la vitesse de chute libre en m/s
+        let constante = 9.81;
+        
+        // Définissez le temps en secondes pendant lequel le corps chute
+        let temps = Math.sqrt(2*hauteurDepart/constante);
+        
+        // Calculez l'altitude à chaque seconde en utilisant la formule suivante :
+        // altitude = hauteurDepart - ( 0.5 * 9.81 * ( temps * temps))
+        let altitudes = [];
+        for (var i = 0; i < temps ; i++) {
+         altitudes[i] = hauteurDepart - (0.5 * constante * Math.pow(i, 2));
+        }
+        let total = altitudes.push(temps.toFixed(2));
+        // Affichez les altitudes dans la console
+        console.log(altitudes);
+        
+        displayArray (altitudes)
+        }
+            
+        </script>
+
+
+<table>
+    <tr>
+      <td id="cell1">Valeur 1</td>
+    </tr>
+  </table>
+  
+  <script>
+    // Récupération des références aux cellules du tableau
+    var tempsTotal = document.getElementById("cell1");
+
+  
+    // Modification des valeurs des cellules
+    cell1.innerHTML = "Nouvelle valeur 1";
+  </script>
+  
+</body>
+</html>

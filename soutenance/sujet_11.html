@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soutenance</title>
+    <link href="./style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./tools.js"></script>
+</head>
+<body>
+<!-- rules and instructions -->
+<div class="card instructions">
+    <p class="h6 font-weight-bold text-center">Consignes générales</p>
+    <p>Toutes les consignes et recommandations vues en cours devront être respectées, notamment :</p>
+    <ul>
+        <li>du code structuré et correctement indenté,</li>
+        <li>du code découpé ; ne pas hésiter à faire plusieurs fonctions (même des petites),</li>
+        <li>du code DRY (Dont' Repeat Yourself),</li>
+        <li>du code <strong>documenté</strong></li>
+        <li>du code testé et avec un minimum de robustesse</li>
+    </ul>
+    <p>Eléments de départ fournis quel que soit le projet :</p>
+    <ul>
+        <li>ce fichier (sujet_xx.html) qui est un conteneur de votre projet</li>
+        <li>un fichier de style CSS (style.css) déjà chargé via le header du document html</li>
+        <li>un fichier Javascript (tools.js), déjà chargé via le header du document html, contenant divers outils :
+            <ul>
+                <li>une fonction d'affichage formatté d'un tableau (Array) à la fin du document html courant,</li>
+                <li>une fonction d'affichage formatté d'un résultat à la fin du document html courant,</li>
+                <li>une fonction de génération aléatoire d'un nombre entier compris entre 2 valeurs,</li>
+                <li>une fonction de génération d'une série aléatoire de nombres entiers rangés dans un tableau de type Array,</li>
+            </ul>
+            N'hésitez pas à faire vos curieux sur le code disponible dans le fichier <em>tools.js</em> et à utiliser (c'est à dire appeler) les fonctions
+            proposées selon votre sujet et/ou vos besoins. Vous pouvez aussi vous en inspirer...
+        </li>
+    </ul>
+    <p>La restitution de votre travail se fera par les moyens de votre choix (zip, dépôt sur votre github, ...) au plus tard 
+        le matin du jour de la soutenance.<br>
+        Elle devra contenir tous les éléments pour faire tourner votre code : à minima, les fichiers tools.js, 
+        style.css et, bien évidemment, le fichier sujet_xx.html que vous aurez modifié. Ajoutez tout autre fichier que vous jugeriez nécessaire
+        pour restituer votre travail.
+    </p>
+    <p>En principe, seul l'ajout de code JavaScript entre les balises &lt;script&gt;...&lt;script&gt;
+        est nécessaire mais sentez-vous libre de modifier n'importe quelle autre partie des 3 fichiers proposés (.html, .js, .css) 
+        sous réserve d'en avoir une justification.
+    </p>
+    <p>Bien entendu, durant la semaine précédant la soutenance, <span class="text-success">je reste disponible pour répondre à toutes les questions</span> 
+        pour lever les doutes, les ambiguïtés, les incompréhensions du sujet, ...<br>
+        <span class="text-danger">Ne restez pas totalement bloqué</span> au risque de perdre du temps ou, pire, de supputer 
+        et de vous fourvoyer... 
+    </p>
+</div>
+
+<!-- subject -->
+<div class="card subject">
+    <p class="h6 font-weight-bold text-center">Sujet #11 - Chute d'un corps</p>
+    <p>Si on lâche dans le vide (pas de frottement) un objet sans lui donner de vitesse, depuis une hauteur appelée <em>hauteur</em>, 
+        il tombe (vous m'en direz tant !), c'est à dire que son <em>altitude</em> évolue en fonction du temps selon l'équation :<br>
+        <em>altitude = -1/2 (G t<sup>2</sup>) + hauteur</em>, où :<br>
+        <ul style="margin-top: 0">
+            <li><em>G</em> est la constante d'accélération de la pesanteur qui vaut 9,81</li>
+            <li><em>t</em> est le temps en secondes compté à partir de 0 qui correspond au lâché du corps</li>
+            <li><em>hauteur</em> est l'altitude de départ (par exemple 541 mètres si vous êtes en haut du One World Trade Center)</li>
+        </ul>
+        Plus "informatiquement" : altitude = hauteur - (0.5 * G * (t * t)), G constante = 9,81.
+    </p>
+    <p></p>
+    <ol>
+        <li>En fonction d'une hauteur de départ que l'utilisateur pourra saisir, construire le tableau des altitudes 
+            pour chaque seconde jusqu'à ce que le corps ne s'écrase (c'est à dire atteigne une altitude de 0)</li>
+        <li>Restituer le tableau des altitudes à l'utilisateur par le moyen de votre choix (console, zone de résultat, ...), mais 
+            la fonction "displayArray" donnée dans <em>tools.js</em> peut se révéler utile.</li>
+    </ol>
+</div>
+
+<!-- html wrapper -->
+<div class="card input">
+    <div class="formulaire">
+        <input type="number" id="Hauteur" placeholder="Altitude de départ">
+        <button type="button" class="btn btn-primary" onclick="dropToCrash()">
+            Lâcher dans le vide
+        </button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+        function dropToCrash (){
+
+
+
+            // on vérifie la valeur saissie par l'utilisateur 
+        let hauteurDepart = document.getElementById('Hauteur').value
+
+        if ((hauteurDepart <= 9999) && (!isNaN(hauteurDepart)) && (hauteurDepart >= 1)) {
+        
+
+    } else {
+        return alert('veuillez rentrez un chiffre entre 1 et 9999 et ne pas saisir de lettre')
+    }
+ 
+        
+            // on définie la constante soit 9.81 
+        let constante = 9.81;
+        
+            // on calcule le temps en secondes pendant lequel le corps chute 
+            // la formule permet de sortir le temps exacte de la chute
+
+       let temps = Math.sqrt(2*hauteurDepart/constante)+1;
+
+
+            // Calculez l'altitude à chaque seconde en utilisant la formule suivante :
+
+            // altitude = hauteurDepart - ( 0.5 * 9.81 * ( temps * temps))
+
+        let altitudes = [];
+
+        // on crée une boucle pour chaque seconde pendant la chute qui actualise l'altitude restant
+        for (let i = 0; i < temps ; i++){
+         altitudes[i] = hauteurDepart - (0.5 * constante * Math.pow(i, 2)); 
+         altitudes[i] = Number(altitudes[i].toFixed(2));   
+         
+        }
+
+        // permet d'afficher dans le tableau le temps Total que mettra l'objet pour atteindre l'altitude ZERO 
+    
+         altitudes.push(temps.toFixed(2)-1 + " seconde pour atteindre l'altitude ZERO");
+
+            // Affichez les altitudes dans la console pour chaque seconde de chute
+
+        console.log(altitudes);
+        // console.log(temps.toFixed(2));
+
+        displayArray (altitudes);
+
+        }
+
+
+
+
+    
+</script>
+</body>
+</html>
